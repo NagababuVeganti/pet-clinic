@@ -11,8 +11,8 @@ public interface CurdService<T,ID> {
 
     T save(T object);
 
-    T delete(T object);
+    void delete(T object);
 
-    T deleteByID(ID id);
+    void deleteByID(ID id);
 
 }
