@@ -1,8 +1,11 @@
 package services;
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.Id;
 import java.util.Set;
 
+@Service
 public interface CurdService<T,ID> {
 
     Set<T> findAll();
