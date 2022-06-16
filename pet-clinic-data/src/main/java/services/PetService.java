@@ -7,5 +7,4 @@ import java.util.Set;
 
 public interface PetService extends CurdService<Pet,Long> {
 
-    Pet findByLastName(String lastName);
 }

@@ -1,11 +1,12 @@
 package services.map;
 
 import services.CurdService;
+import services.OwnerService;
 import sfpetclinic.Model.Owner;
 
 import java.util.Set;
 
-public class OwnerMapService extends AbstractMapService<Owner,Long> implements CurdService<Owner,Long> {
+public class OwnerMapService extends AbstractMapService<Owner,Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -31,4 +32,5 @@ public class OwnerMapService extends AbstractMapService<Owner,Long> implements C
     public Owner findById(Long id) {
         return super.findById(id);
     }
+
 }
