@@ -2,6 +2,7 @@ package controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import services.OwnerService;
 
@@ -26,5 +27,11 @@ public class ownersController {
     public String findOwners()
     {
         return "notImplemented";
+    }
+    @RequestMapping("/{ownerId}")
+    public String ShowOwner(@PathVariable String ownerId,Model model)
+    {
+        model.addAttribute("owner",ownerService.findById(Long.valueOf(ownerId)));
+        return "owners/ownerDetails";
     }
 }

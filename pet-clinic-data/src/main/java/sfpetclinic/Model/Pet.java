@@ -11,7 +11,7 @@ public class Pet extends  BaseEntity
 {
     @ManyToOne
     @JoinColumn(name="type_id")
-    private PetType petype;
+    private PetType pettype;
     @Column(name="name")
     private String name;
     @ManyToOne
@@ -19,6 +19,14 @@ public class Pet extends  BaseEntity
     private Owner owner;
     @Column(name="birth_date")
     private LocalDate birthdate;
+
+    public Set<Visit> getVisits() {
+        return visits;
+    }
+
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "pet")
     private Set<Visit> visits= new HashSet<>();
@@ -33,12 +41,12 @@ public class Pet extends  BaseEntity
 
 
 
-    public PetType getPetype() {
-        return petype;
+    public PetType getPettype() {
+        return pettype;
     }
 
-    public void setPetype(PetType petype) {
-        this.petype = petype;
+    public void setPettype(PetType petype) {
+        this.pettype = petype;
     }
 
     public Owner getOwner() {

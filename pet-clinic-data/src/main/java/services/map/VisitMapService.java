@@ -2,41 +2,41 @@ package services.map;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
-import services.PetTypeService;
-import sfpetclinic.Model.PetType;
+import services.VisitService;
+import sfpetclinic.Model.Visit;
 
 import java.util.Set;
 
 @Service
 @Profile({"default","Map"})
-public class PetTypeMapService extends AbstractMapService<PetType,Long> implements PetTypeService {
+public class VisitMapService extends AbstractMapService<Visit,Long> implements VisitService {
     @Override
-    public Set<PetType> findAll() {
+    public Set<Visit> findAll() {
         return super.findAll();
     }
 
     @Override
-    public PetType findByLastName(String name) {
+    public Visit findByLastName(String name) {
         return null;
     }
 
     @Override
     public void deleteByID(Long aLong) {
-
+        super.deleteById(aLong);
     }
 
     @Override
-    public void delete(PetType object) {
-
+    public void delete(Visit object) {
+            super.delete(object);
     }
 
     @Override
-    public PetType save(PetType object) {
+    public Visit save(Visit object) {
         return super.save(object);
     }
 
     @Override
-    public PetType findById(Long id) {
+    public Visit findById(Long id) {
         return super.findById(id);
     }
 }
