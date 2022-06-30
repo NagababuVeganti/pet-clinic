@@ -6,7 +6,7 @@
   <body>
   
   
-    <h2>Owner Information</h2>
+    <h2>Owner Information:</h2>
   
   
     <table class="table table-striped" th:object="${owner}">
@@ -48,7 +48,7 @@
             <dt>Birth Date</dt>
             <dd
               th:text="${#temporals.format(pet.birthdate, 'yyyy-MM-dd')}" /></dd>
-            <dt>Type:</dt>
+            <dt>Pet Type:</dt>
             <dd th:text="${pet.pettype.getName()}" /></dd>
           </dl>
         </td>
