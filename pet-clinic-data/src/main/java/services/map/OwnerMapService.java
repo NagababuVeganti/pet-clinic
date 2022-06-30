@@ -8,6 +8,7 @@ import services.PetTypeService;
 import sfpetclinic.Model.Owner;
 import sfpetclinic.Model.Pet;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -78,4 +79,8 @@ public class OwnerMapService extends AbstractMapService<Owner,Long> implements O
         return super.findById(id);
     }
 
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastname) {
+        return null;
+    }
 }

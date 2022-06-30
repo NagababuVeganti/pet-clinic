@@ -131,6 +131,31 @@ public class DataLoader implements CommandLineRunner {
         owner4.setPhone("123456");
         ownerRepository.save(owner4);
 
+
+        Owner owner5= new Owner();
+        owner5.setFirstName("Sara");
+        owner5.setLastName("Veganti");
+        owner5.setAddress("14205 montery place");
+        owner5.setCity("orlando");
+        owner5.setPhone("12345sdf6");
+        ownerRepository.save(owner5);
+
+        Owner owner6= new Owner();
+        owner6.setFirstName("Sara1");
+        owner6.setLastName("Veganti2");
+        owner6.setAddress("14205 montery place");
+        owner6.setCity("orlandod");
+        owner6.setPhone("123451236");
+        ownerRepository.save(owner6);
+
+        Owner owner7= new Owner();
+        owner7.setFirstName("Sarqa");
+        owner7.setLastName("Veganti3");
+        owner7.setAddress("14205 montery place");
+        owner7.setCity("o1rlando");
+        owner7.setPhone("123451236");
+        ownerRepository.save(owner7);
+
         System.out.println("============Loaded Owner data==============");
 
         Vet vet1 = new Vet();

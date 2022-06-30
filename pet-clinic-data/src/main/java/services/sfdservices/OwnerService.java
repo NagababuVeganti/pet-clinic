@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import repositories.OwnerRepository;
 import sfpetclinic.Model.Owner;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -49,5 +50,10 @@ public class OwnerService implements services.OwnerService {
     @Override
     public void deleteByID(Long aLong) {
     ownerRepository.deleteById(aLong);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastname) {
+       return ownerRepository.findAllByLastNameLike(lastname);
     }
 }
