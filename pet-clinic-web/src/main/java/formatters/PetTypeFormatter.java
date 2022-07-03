@@ -20,7 +20,6 @@ public class PetTypeFormatter implements Formatter<PetType> {
     @Override
     public String print(PetType petType, Locale locale)
     {
-        System.out.println("loaded");
         return petType.getName();
     }
 
@@ -31,11 +30,9 @@ public class PetTypeFormatter implements Formatter<PetType> {
         for(PetType type: findPetTypes)
         {
             if(type.getName().equals(text)) {
-                System.out.println("found");
                 return type;
             }
         }
-        System.out.println("returning NUll");
         throw  new ParseException("text",0);
     }
 
