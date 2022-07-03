@@ -14,7 +14,7 @@ import sfpetclinic.Model.*;
 import java.time.LocalDate;
 
 @Component
-@ComponentScan({"services", "repositories","services.SpringDataJPA"})
+@ComponentScan({"services", "repositories","services.SpringDataJPA","formatters"})
 @EnableJpaRepositories("repositories")
 public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
@@ -57,18 +57,18 @@ public class DataLoader implements CommandLineRunner {
         dog.setName("Dog");
 
         PetType cat = new PetType();
-        dog.setName("Cat");
+        cat.setName("Cat");
 
         PetType bird = new PetType();
-        dog.setName("Bird");
+        bird.setName("Bird");
 
         PetType snake = new PetType();
-        dog.setName("Snake");
+        snake.setName("Snake");
 
-        petTypeRepository.save(dog);
-        petTypeRepository.save(cat);
-        petTypeRepository.save(snake);
-        petTypeRepository.save(bird);
+       PetType savedDog= petTypeRepository.save(dog);
+        PetType savedCat= petTypeRepository.save(cat);
+        PetType savedSnake= petTypeRepository.save(snake);
+        PetType savedBird= petTypeRepository.save(bird);
 
         System.out.println("==========Loaded PetType data========");
 
@@ -98,7 +98,7 @@ public class DataLoader implements CommandLineRunner {
         owner1.setPhone("888834343");
 
         Pet mikepet = new Pet();
-        mikepet.setPettype(dog);
+        mikepet.setPettype(savedDog);
         mikepet.setName("tommmy");
         mikepet.setOwner(owner1);
         mikepet.setBirthdate(LocalDate.now());
@@ -114,7 +114,7 @@ public class DataLoader implements CommandLineRunner {
         owner2.setPhone("88812343");
 
         Pet sophepet = new Pet();
-        sophepet.setPettype(dog);
+        sophepet.setPettype(savedDog);
         sophepet.setName("rufos");
         sophepet.setOwner(owner2);
         sophepet.setBirthdate(LocalDate.now());

@@ -1,5 +1,7 @@
 package sfpetclinic.Model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -18,6 +20,7 @@ public class Pet extends  BaseEntity
     @JoinColumn(name="owner_id")
     private Owner owner;
     @Column(name="birth_date")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthdate;
 
     public Set<Visit> getVisits() {

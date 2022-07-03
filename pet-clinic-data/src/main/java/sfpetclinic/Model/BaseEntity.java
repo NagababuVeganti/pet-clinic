@@ -20,4 +20,9 @@ public class BaseEntity implements Serializable {
     public void setId(Long id) {
         Id = id;
     }
+
+    public boolean isNew()
+    {
+        return  this.Id==null;
+    }
 }
