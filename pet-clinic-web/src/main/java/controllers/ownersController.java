@@ -21,13 +21,6 @@ public class ownersController {
         this.ownerService = ownerService;
     }
 
-    @RequestMapping({"/","index","index.html"})
-    public String getOwners(Model model)
-    {
-        model.addAttribute("owners", ownerService.findAll());
-        return "owners/index";
-    }
-
     @RequestMapping({"/find"})
     public String findOwners(Model model)
     {
@@ -53,7 +46,7 @@ public class ownersController {
         else
         {
             model.addAttribute("selections",result);
-            return "/owners/ownersList";
+            return "owners/ownersList";
         }
 
 
